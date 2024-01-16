@@ -1,5 +1,8 @@
+
 import { Inter } from 'next/font/google'
 import './globals.css'
+import Sidebar from './components/Sidebar'
+import Nav from './components/Nav'
 
 const inter = Inter({ subsets: ['latin'] })
 
@@ -9,9 +12,44 @@ export const metadata = {
 }
 
 export default function RootLayout({ children }) {
+
+
+
   return (
     <html lang="en">
-      <body className={inter.className}>{children}</body>
-    </html>
+      <body className={inter.className}>
+
+
+        <div className="flex h-screen">
+          {/* Sidebar (Div 1) */}
+          <div className="w-1/4 bg-lightgreen p-4">
+            <Sidebar />
+          </div>
+
+          {/* Main Container (Div 2) */}
+          <div className="flex flex-col flex-1 overflow-hidden">
+
+            Navigation Bar
+          </div>
+
+
+          {/* Content Container (Div 4) */}
+          <div className="flex-1 overflow-y-auto p-4">
+            Main Content
+          </div>
+        </div>
+
+        {/* Footer (Div 5) */}
+        <div className="bg-lightcoral p-4 text-center">
+          Footer
+        </div>
+
+
+
+        <script
+          type="text/javascript"
+          src="../node_modules/tw-elements/dist/js/tw-elements.umd.min.js"></script>
+      </body>
+    </html >
   )
 }
